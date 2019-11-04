@@ -32,7 +32,7 @@
             <br>
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-success">Enviar</button>
+                    <button class="button is-primary">Enviar</button>
                 </div>
                 <div class="control">
                     <a href="/video" class="button is-success is-light">Cancelar</a>
