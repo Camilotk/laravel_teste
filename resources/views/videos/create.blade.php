@@ -8,7 +8,8 @@
             @csrf
             <label for="video_nome" class="label">Nome:</label>
             <input id="video_nome_id" type="text" name="video_nome" class="input">
-
+            <label for="link" class="label">Link:</label>
+            <input type="text" name="video_link" id="link" class="input">
             <div class="field">
                 <div class="control">
                     <label for="video_categoria" class="label">Categoria:</label>
@@ -43,10 +44,10 @@
             <br>
             <div class="field is-grouped">
                 <div class="control">
-                    <button class="button is-success">Submit</button>
+                    <button class="button is-success">Enviar</button>
                 </div>
                 <div class="control">
-                    <button class="button is-success is-light">Cancel</button>
+                    <a href="/video" class="button is-success is-light">Cancelar</button>
                 </div>
             </div>
         </form>

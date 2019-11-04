@@ -37,7 +37,12 @@ class VideoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+       $video['nome'] = $request->video_nome;
+       $video['link'] = $request->video_link;
+       $video['categoria_id'] = $request->video_categoria;
+       $video['descricao'] = $request->descricao;
+       DB::table('videos')->insert($video);
+       return redirect('/video'); 
     }
 
     /**

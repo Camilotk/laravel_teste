@@ -18,5 +18,5 @@
     </tbody>
 </table>
 
-<a class="button is-dark" href="/video/novo">Novo</a>
+<a class="button is-dark" href="/video/create">Novo</a>
 @endsection

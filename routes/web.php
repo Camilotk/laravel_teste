@@ -15,8 +15,4 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/video', 'VideoController@index');
-Route::get('/video/novo', 'VideoController@create');
-Route::post('/video', 'VideoController@store');
-// Route::put();
-// Route::delete();
+Route::resource('video', 'VideoController');
