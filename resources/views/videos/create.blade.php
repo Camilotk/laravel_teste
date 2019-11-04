@@ -15,15 +15,15 @@
                     <div class="select is-success">
                         <select name="video_categoria">
                             <option value="0">Escolha...</option>
-                            <option value="1">Comédia</option>
-                            <option value="2">Drama</option>
-                            <option value="3">Ação</option>
-                            <option value="4">Esporte</option>
+                           @foreach ($categorias as $categoria)
+                                <option value="{{ $categoria->id }}">{{ $categoria->nome }}</option>
+                           @endforeach 
                         </select>
                     </div>
                 </div>
             </div>
-
+            <textarea class="textarea" placeholder="Descrição" name="descricao"></textarea>
+            <?php /*
             <div class="file has-name">
                 <label class="file-label">
                     <input class="file-input" type="file" name="video_arquivo">
@@ -39,7 +39,7 @@
                         Nome do video aqui
                     </span>
                 </label>
-            </div>
+            </div> */ ?>
             <br>
             <div class="field is-grouped">
                 <div class="control">
