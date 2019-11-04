@@ -12,7 +12,7 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return "Rotas: /video /categoria";
 });
 
 Route::resource('video', 'VideoController')->except('show');
