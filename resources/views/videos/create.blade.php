@@ -7,9 +7,9 @@
         <form action="/video" method="POST">
             @csrf
             <label for="video_nome" class="label">Nome:</label>
-            <input id="video_nome_id" type="text" name="video_nome" class="input">
+            <input id="video_nome_id" type="text" name="video_nome" class="input is-success">
             <label for="link" class="label">Link:</label>
-            <input type="text" name="video_link" id="link" class="input">
+            <input type="text" name="video_link" id="link" class="input is-success">
             <div class="field">
                 <div class="control">
                     <label for="video_categoria" class="label">Categoria:</label>
@@ -23,7 +23,7 @@
                     </div>
                 </div>
             </div>
-            <textarea class="textarea" placeholder="Descrição" name="descricao"></textarea>
+            <textarea class="textarea is-success" placeholder="Descrição" name="descricao"></textarea>
             <?php /*
             <div class="file has-name">
                 <label class="file-label">
@@ -47,7 +47,7 @@
                     <button class="button is-success">Enviar</button>
                 </div>
                 <div class="control">
-                    <a href="/video" class="button is-success is-light">Cancelar</button>
+                    <a href="/video" class="button is-success is-light">Cancelar</a>
                 </div>
             </div>
         </form>

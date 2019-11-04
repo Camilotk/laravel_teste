@@ -15,5 +15,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::resources(['video' => 'VideoController',
-                  'categoria' => 'CategoriaController']);
+Route::resource('video', 'VideoController')->except('show');
+Route::resource('categoria', 'CategoriaController')->except('show');

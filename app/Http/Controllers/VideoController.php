@@ -65,7 +65,9 @@ class VideoController extends Controller
      */
     public function edit($id)
     {
-        //
+       $video = Video::findOrFail($id);
+       $categorias = Categoria::all();
+       return view('videos.edit', compact('video', 'categorias')); 
     }
 
     /**
@@ -77,7 +79,12 @@ class VideoController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+       $video['nome'] = $request->video_nome;
+       $video['link'] = $request->video_link;
+       $video['categoria_id'] = $request->video_categoria;
+       $video['descricao'] = $request->descricao;
+       Video::find($id)->update($video);
+       return redirect('video'); 
     }
 
     /**

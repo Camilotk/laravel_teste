@@ -2,7 +2,7 @@
 
 @section ('conteudo')
 <div class="container">
-    <table class="table">
+    <table class="table" style="margin-top:15px;">
         <thead>
             <th>Nome</th>
             <th>Descricao</th>
@@ -14,14 +14,22 @@
             <tr>
                 <th>{{ $video->nome }}</th>
                 <th>{{ $video->descricao }}</th>
-                <th>{{ $categorias[$video->categoria_id - 1]->nome }}</th>
+                <th>
+                @foreach ($categorias as $categoria)
+                    @if ($categoria->id === $video->categoria_id)
+                        {{ $categoria->nome }}
+                    @endif
+                @endforeach
+                </th>
                 <th style="display:flex;"><a target="_blank" href="{{ $video->link }}" class="button is-link">Assistir</a>
-
+                    <a style="margin-left:5px;" href="/video/{{$video->id}}/edit" class="button is-warning">Editar</a>
+                    <?php /*
                     <form action="{{ url('/video', ['id' => $video->id])}}" method="post">
                         @method('put')
                         @csrf
                         <input style="margin-left:5px;" type="button" value="Editar" class="button is-warning">
                     </form>
+                    */ ?>
                 
                     <form action="{{ url("/video", ['id' => $video->id]) }}" method="post">
                         @method('delete')
