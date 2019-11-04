@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Categoria;
 
 class CategoriaController extends Controller
 {
@@ -13,7 +14,7 @@ class CategoriaController extends Controller
      */
     public function index()
     {
-        //
+        return view('categorias.index', ["categorias" => Categoria::all()]);
     }
 
     /**
@@ -23,7 +24,7 @@ class CategoriaController extends Controller
      */
     public function create()
     {
-        //
+        return view('categorias.create');
     }
 
     /**
@@ -34,7 +35,10 @@ class CategoriaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $categoria['nome'] = $request->nome;
+        $categoria['slug'] = $request->slug;
+        Categoria::insert($categoria);
+        return redirect('/categoria');
     }
 
     /**

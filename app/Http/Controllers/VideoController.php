@@ -16,7 +16,8 @@ class VideoController extends Controller
      */
     public function index()
     {
-        return view('videos.index', ["videos" => Video::all()]);
+        return view('videos.index', ["videos" => Video::all(), 
+                                      "categorias" => Categoria::all()]);
     }
 
     /**
@@ -41,7 +42,7 @@ class VideoController extends Controller
        $video['link'] = $request->video_link;
        $video['categoria_id'] = $request->video_categoria;
        $video['descricao'] = $request->descricao;
-       DB::table('videos')->insert($video);
+       Video::insert($video);
        return redirect('/video'); 
     }
 
@@ -87,6 +88,7 @@ class VideoController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Video::destroy($id);
+        return redirect()->back();
     }
 }
